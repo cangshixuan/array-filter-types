@@ -4,5 +4,5 @@ interface User {
 }
 
 export function getAdults(users: (User | null)[]): User[] {
-  return users.filter(Boolean).filter((user) => user.age >= 18);
+  return (users.filter(Boolean) as User[]).filter((user) => user.age >= 18);
 }
